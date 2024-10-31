@@ -3,7 +3,7 @@
 # 10/31/24
 # Lab 7
 # Lab Section: 12 
-# Sources, people worked with, help given to: 
+# Sources, people worked with, help given to: W3 Schools
 # your
 # comments
 # here
@@ -121,110 +121,123 @@ print("*"*75)
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
 operators_list = ["+","-","/","*","%"]
-calculator_input = input("Give an operand operator operand statement: ")
+
 operator_used = ""
 final_problem = None
 final_problem_split = ""
 result = None
 number_of_nums = 0
 
-for item in calculator_input:
-    if item.isdigit():
-        number_of_nums += 1
-    for operator in operators_list:
-        if item == operator:
-            operator_used = operator
+while True:
+    calculator_input = input("Give an operand operator operand statement, type 'exit' to leave: ")
 
-if number_of_nums >= 2:
+    if calculator_input == "exit":
+        break
+
+    operator_used = ""
+    final_problem = None
+    final_problem_split = ""
+    result = None
     number_of_nums = 0
 
-    #+
-    if operator_used == "+":
-        final_problem = calculator_input.split("+")
-        for item in final_problem:
-            final_problem_split += item
-        final_problem_split = final_problem_split.split()
-        print(final_problem_split)
+    for item in calculator_input:
+        if item.isdigit():
+            number_of_nums += 1
+        for operator in operators_list:
+            if item == operator:
+                operator_used = operator
 
-        for item in final_problem_split:
-            if item.isdigit():
-                number_of_nums += 1
-        if number_of_nums == 2:
-            result = int(final_problem_split[0]) + int(final_problem_split[1])
-        else:
-            print("Please input an operand operator operand statement")
+    if number_of_nums >= 2:
+        number_of_nums = 0
 
-    #-
-    if operator_used == "-":
-        final_problem = calculator_input.split("-")
-        for item in final_problem:
-            final_problem_split += item
-        final_problem_split = final_problem_split.split()
-        print(final_problem_split)
+        #+
+        if operator_used == "+":
+            final_problem = calculator_input.split("+")
+            for item in final_problem:
+                final_problem_split += item
+            final_problem_split = final_problem_split.split()
+            print(final_problem_split)
 
-        for item in final_problem_split:
-            if item.isdigit():
-                number_of_nums += 1
-        if number_of_nums == 2:
-            result = int(final_problem_split[0]) - int(final_problem_split[1])
-        else:
-            print("Please input an operand operator operand statement")
+            for item in final_problem_split:
+                if item.isdigit():
+                    number_of_nums += 1
+            if number_of_nums == 2:
+                result = int(final_problem_split[0]) + int(final_problem_split[1])
+            else:
+                print("Please input an operand operator operand statement")
 
-    #*
-    if operator_used == "*":
-        final_problem = calculator_input.split("*")
-        for item in final_problem:
-            final_problem_split += item
-        final_problem_split = final_problem_split.split()
-        print(final_problem_split)
+        #-
+        if operator_used == "-":
+            final_problem = calculator_input.split("-")
+            for item in final_problem:
+                final_problem_split += item
+            final_problem_split = final_problem_split.split()
+            print(final_problem_split)
 
-        for item in final_problem_split:
-            if item.isdigit():
-                number_of_nums += 1
-        if number_of_nums == 2:
-            result = int(final_problem_split[0]) * int(final_problem_split[1])
-        else:
-            print("Please input an operand operator operand statement")
+            for item in final_problem_split:
+                if item.isdigit():
+                    number_of_nums += 1
+            if number_of_nums == 2:
+                result = int(final_problem_split[0]) - int(final_problem_split[1])
+            else:
+                print("Please input an operand operator operand statement")
 
-    #/
-    if operator_used == "/":
-        final_problem = calculator_input.split("/")
-        for item in final_problem:
-            final_problem_split += item
-        final_problem_split = final_problem_split.split()
-        print(final_problem_split)
+        #*
+        if operator_used == "*":
+            final_problem = calculator_input.split("*")
+            for item in final_problem:
+                final_problem_split += item
+            final_problem_split = final_problem_split.split()
+            print(final_problem_split)
 
-        for item in final_problem_split:
-            if item.isdigit():
-                number_of_nums += 1
-        if number_of_nums == 2:
-            result = int(final_problem_split[0]) / int(final_problem_split[1])
-        else:
-            print("Please input an operand operator operand statement")
+            for item in final_problem_split:
+                if item.isdigit():
+                    number_of_nums += 1
+            if number_of_nums == 2:
+                result = int(final_problem_split[0]) * int(final_problem_split[1])
+            else:
+                print("Please input an operand operator operand statement")
 
-    #%
-    if operator_used == "%":
-        final_problem = calculator_input.split("%")
-        for item in final_problem:
-            final_problem_split += item
-        final_problem_split = final_problem_split.split()
-        print(final_problem_split)
+        #/
+        if operator_used == "/":
+            final_problem = calculator_input.split("/")
+            for item in final_problem:
+                final_problem_split += item
+            final_problem_split = final_problem_split.split()
+            print(final_problem_split)
 
-        for item in final_problem_split:
-            if item.isdigit():
-                number_of_nums += 1
-        if number_of_nums == 2:
-            result = int(final_problem_split[0]) % int(final_problem_split[1])
-        else:
-            print("Please input an operand operator operand statement")
+            for item in final_problem_split:
+                if item.isdigit():
+                    number_of_nums += 1
+            if number_of_nums == 2:
+                result = int(final_problem_split[0]) / int(final_problem_split[1])
+            else:
+                print("Please input an operand operator operand statement")
 
-print("The result of your calculation is:")
-print(result)
+        #%
+        if operator_used == "%":
+            final_problem = calculator_input.split("%")
+            for item in final_problem:
+                final_problem_split += item
+            final_problem_split = final_problem_split.split()
+            print(final_problem_split)
 
+            for item in final_problem_split:
+                if item.isdigit():
+                    number_of_nums += 1
+            if number_of_nums == 2:
+                result = int(final_problem_split[0]) % int(final_problem_split[1])
+            else:
+                print("Please input an operand operator operand statement")
+
+    print("The result of your calculation is:")
+    print(result)
     
 
-
-
-
-
         
+
+
+
+
+
+            
